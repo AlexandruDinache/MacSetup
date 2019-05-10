@@ -52,8 +52,8 @@ alias flushDNS='dscacheutil -flushcache'            # flushDNS:     Flush out th
 alias openPorts='sudo lsof -i | grep LISTEN'        # openPorts:    All listening connections
 alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
 alias topforever='top -l 9999999 -s 10 -o cpu'
-alias fdev = 'cd ~/Projects/dev'
-alias projects = 'cd ~/Projects'
+alias fdev = "cd ~/Projects/dev"
+alias projects = "cd ~/Projects"
 
 cd() { builtin cd "$@"; ll; }               # Always list directory contents upon 'cd'
 
