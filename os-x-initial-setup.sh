@@ -21,6 +21,7 @@ brew cask install discord #chat
 brew cask install hyperswitch #show preview on cmd tab
 brew cask install adobe-acrobat-reader
 brew cask install flux #night color temperature
+brew cask install geektool #customize desktop
 
 brew install pyenv #multiple python versions
 brew install vitorgalvao/tiny-scripts/cask-repair #only to update brew casks
@@ -37,7 +38,7 @@ brew install mitmproxy #intercept, alter HTTP request
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 
 #Install visual studio code extensions
-https://raw.githubusercontent.com/AlexandruDinache/MacSetup/master/vs-extensions.txt
+curl -o- https://raw.githubusercontent.com/AlexandruDinache/MacSetup/master/vs-extensions.txt
 while read line; do code --install-extension "$line"; done < vs-extensions.txt
 rm vs-extensions.txt
 
