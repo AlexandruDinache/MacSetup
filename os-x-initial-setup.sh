@@ -28,6 +28,10 @@ brew cask install whatsapp
 brew cask install java
 brew cask install ghidra #only for rev eng
 brew cask install skype
+brew cask install thunderbird
+brew cask install nextcloud
+brew cask install bitbar #scripts in macos menu bar
+brew cask install cheatsheet #cmd keypress show all shortcuts
 
 brew install youtube-dl #download youtube video
 brew install httrack #download entire html site
