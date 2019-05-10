@@ -27,6 +27,7 @@ brew cask install vlc
 brew cask install whatsapp
 brew cask install java
 brew cask install ghidra #only for rev eng
+brew cask install skype
 
 brew install youtube-dl #download youtube video
 brew install httrack #download entire html site
