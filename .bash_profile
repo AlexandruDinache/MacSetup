@@ -1,3 +1,16 @@
+shopt -s autocd #auto cd
+shopt -s histappend #append history
+
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+
+#Set default blocksize for ls, df, du
+export BLOCKSIZE=1k
+
+#Set history
+export HISTSIZE=32768
+export HISTFILESIZE=$HISTSIZE
+
 #Color variables
 txtred='\e[0;31m' # Red
 txtgrn='\e[0;32m' # Green
@@ -14,16 +27,8 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
-
-#Set default blocksize for ls, df, du
-export BLOCKSIZE=1k
-
-#Set history
-export HISTSIZE=32768
-export HISTFILESIZE=$HISTSIZE
-
 #Set prompt format
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$(vcprompt)$ "
 
 #Set colors
 export CLICOLOR=1
