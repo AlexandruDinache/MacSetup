@@ -22,7 +22,12 @@ brew cask install hyperswitch #show preview on cmd tab
 brew cask install adobe-acrobat-reader
 brew cask install flux #night color temperature
 brew cask install geektool #customize desktop
+brew cask install qbittorrent
+brew cask install vlc 
+brew cask install whatsapp
 
+brew install youtube-dl #download youtube video
+brew install httrack #download entire html site
 brew install pyenv #multiple python versions
 brew install vitorgalvao/tiny-scripts/cask-repair #only to update brew casks
 brew install bash #latest version of bash
