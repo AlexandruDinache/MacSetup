@@ -1,4 +1,3 @@
-shopt -s autocd #auto cd
 shopt -s histappend #append history
 
 bind '"\e[A": history-search-backward'
@@ -43,7 +42,6 @@ export PATH=$PATH:$HOME/Projects/bin #for own binaries
 export EDITOR=/usr/bin/nano
 
 #Set command alias
-cd() { builtin cd "$@"; ll; }               # Always list directory contents upon 'cd'
 alias ll='ls -al'
 alias ls='ls -GFh'
 alias ~="cd ~"                              # ~:            Go Home
@@ -54,9 +52,10 @@ alias flushDNS='dscacheutil -flushcache'            # flushDNS:     Flush out th
 alias openPorts='sudo lsof -i | grep LISTEN'        # openPorts:    All listening connections
 alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
 alias topforever='top -l 9999999 -s 10 -o cpu'
-alias fdev = "cd ~/Projects/dev"
-alias projects = "cd ~/Projects"
+alias fdev = 'cd ~/Projects/dev'
+alias projects = 'cd ~/Projects'
 
+cd() { builtin cd "$@"; ll; }               # Always list directory contents upon 'cd'
 
 #Functions
 ii() {
