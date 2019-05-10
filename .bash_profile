@@ -15,13 +15,6 @@ export BLOCKSIZE=1k
 export HISTSIZE=32768
 export HISTFILESIZE=$HISTSIZE
 
-#Color variables
-txtred='\e[0;31m' # Red
-txtgrn='\e[0;32m' # Green
-bldgrn='\e[1;32m' # Bold Green
-bldpur='\e[1;35m' # Bold Purple
-txtrst='\e[0m'    # Text Reset
-
 # Color for manpages in less makes manpages a little easier to read
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'
@@ -41,7 +34,7 @@ export PATH="/usr/local/git/bin:/sw/bin/:/usr/local/bin:/usr/local/:/usr/local/s
 export PATH=$PATH:$HOME/Projects/bin #for own binaries
 
 #Set prompt format
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$(vcprompt)$ "
+export PS1='\n\[\e[1;37m\]|-- \[\e[1;32m\]\u\[\e[0;39m\]@\[\e[1;36m\]\h\[\e[0;39m\]:\[\e[1;33m\]\w\[\e[0;39m\]\[\e[1;35m\]$(vcprompt " (%s)")\[\e[0;39m\] \[\e[1;37m\]--|\[\e[0;39m\]\n\$ '
 
 #Set default editor
 export EDITOR=/usr/bin/nano
