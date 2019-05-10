@@ -44,18 +44,16 @@ export EDITOR=/usr/bin/nano
 #Set command alias
 alias ll='ls -al'
 alias ls='ls -GFh'
-alias ~="cd ~"                              # ~:            Go Home
-alias c='clear'                             # c:            Clear terminal display
-alias o='open -a Finder ./'                 # f:            Opens current directory in MacOS Finder
-alias myip='curl ifconfig.co'               # myip:         Public facing IP Address
-alias flushDNS='dscacheutil -flushcache'            # flushDNS:     Flush out the DNS Cache
-alias openPorts='sudo lsof -i | grep LISTEN'        # openPorts:    All listening connections
+alias ~="cd ~"                              
+alias c='clear'                             
+alias o='open -a Finder ./'                 
+alias myip='curl ifconfig.co'               
+alias flushDNS='dscacheutil -flushcache'            
+alias openPorts='sudo lsof -i | grep LISTEN'        
 alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
 alias topforever='top -l 9999999 -s 10 -o cpu'
-alias fdev = "cd ~/Projects/dev"
-alias projects = "cd ~/Projects"
 
-cd() { builtin cd "$@"; ll; }               # Always list directory contents upon 'cd'
+cd() { builtin cd "$@"; ll; }               
 
 #Functions
 ii() {
