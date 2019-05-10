@@ -37,14 +37,15 @@ brew install mitmproxy #intercept, alter HTTP request
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 
 #Install visual studio code extensions
-curl -o- https://github.com/AlexandruDinache/MacSetup/edit/master/vs-extensions.txt
+https://raw.githubusercontent.com/AlexandruDinache/MacSetup/master/vs-extensions.txt
 while read line; do code --install-extension "$line"; done < vs-extensions.txt
 rm vs-extensions.txt
 
 mkdir ~/Projects
 mkdir ~/Projects/dev
 
-#Don't commit to github everything
+#Don't commit to github everything && GitConfig
 cd ~/Projects/dev
-curl -o- https://github.com/AlexandruDinache/MacSetup/edit/master/.gitignore
+curl -o- https://raw.githubusercontent.com/AlexandruDinache/MacSetup/master/.gitignore
+curl -o- https://raw.githubusercontent.com/AlexandruDinache/MacSetup/master/.gitconfig
 cd ~
