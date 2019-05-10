@@ -20,7 +20,9 @@ brew cask install bowtie #control music with API
 brew cask install discord #chat
 brew cask install hyperswitch #show preview on cmd tab
 brew cask install adobe-acrobat-reader
+brew cask install flux #night color temperature
 
+brew install pyenv #multiple python versions
 brew install vitorgalvao/tiny-scripts/cask-repair #only to update brew casks
 brew install bash #latest version of bash
 brew install fortune #random quotations
@@ -29,9 +31,20 @@ brew install git
 brew install vcprompt #Show branch on shell prompts
 brew install wget
 brew install tldr #smaller man pages
+brew install mitmproxy #intercept, alter HTTP request
 
 #Install node version manager
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 
+#Install visual studio code extensions
+curl -o- https://github.com/AlexandruDinache/MacSetup/edit/master/vs-extensions.txt
+while read line; do code --install-extension "$line"; done < vs-extensions.txt
+rm vs-extensions.txt
+
 mkdir ~/Projects
 mkdir ~/Projects/dev
+
+#Don't commit to github everything
+cd ~/Projects/dev
+curl -o- https://github.com/AlexandruDinache/MacSetup/edit/master/.gitignore
+cd ~
