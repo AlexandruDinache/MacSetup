@@ -111,6 +111,49 @@ function randpassw() {
 	echo 
 }
 
+#Open new tab (iterm) from terminal
+function newtab () {
+  [ "$(uname -s)" != "Darwin" ] && return
+  local cmd=""
+  local cdto="$PWD"
+  local args="$@"
+
+  if [ -d "$1" ]; then
+    cdto="$(cd "$1"; pwd)"
+    args="${@:2}"
+  fi
+
+  if [ -n "$args" ]; then
+    cmd="; $args"
+  fi
+
+  osascript &>/dev/null <<EOF
+    tell application "iTerm"
+      tell current window
+        set newTab to (create tab with default profile)
+        tell newTab
+          tell current session
+            write text "cd \"$cdto\"$cmd"
+          end tell
+        end tell
+      end tell
+    end tell
+EOF
+}
+
+#Open new window (iterm) from terminal
+function newwin () {
+  [ "$(uname -s)" != "Darwin" ] && return
+  osascript &>/dev/null <<EOF
+    tell application "iTerm2"
+      set newWindow to (create window with default profile)
+      tell newWindow
+        select
+      end tell
+    end tell
+EOF
+}
+
 #Develop stuff
 alias httpStatus="curl -w %{http_code} -s --output /dev/null $1"
 httpHeaders () { /usr/bin/curl -I -L $@ ; }
