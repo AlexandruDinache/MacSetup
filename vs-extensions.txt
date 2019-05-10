@@ -1,0 +1,16 @@
+patbenatar.advanced-new-file
+formulahendry.auto-close-tag
+formulahendry.auto-rename-tag
+fosshaas.fontsize-shortcuts
+BriteSnow.vscode-toggle-quotes
+Zignd.html-css-class-completion
+christian-kohler.npm-intellisense
+christian-kohler.path-intellisense
+octref.vetur
+dbaeumer.vscode-eslint
+hookyqr.beautify
+coenraads.bracket-pair-colorizer
+PKief.material-icon-theme
+SmukkeKim.theme-setimonokai
+wix.vscode-import-cost
+WallabyJs.quokka-vscode
