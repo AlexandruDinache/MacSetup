@@ -19,7 +19,9 @@ brew cask install coconutbattery #more info about battery health
 brew cask install bowtie #control music with API
 brew cask install discord #chat
 brew cask install hyperswitch #show preview on cmd tab
+brew cask install adobe-acrobat-reader
 
+brew install vitorgalvao/tiny-scripts/cask-repair #only to update brew casks
 brew install bash #latest version of bash
 brew install fortune #random quotations
 brew install cowsay #ASCII pictures
@@ -27,6 +29,9 @@ brew install git
 brew install vcprompt #Show branch on shell prompts
 brew install wget
 brew install tldr #smaller man pages
+
+#Install node version manager
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 
 mkdir ~/Projects
 mkdir ~/Projects/dev
