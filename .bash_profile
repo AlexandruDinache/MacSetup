@@ -1,5 +1,9 @@
 shopt -s histappend #append history
 
+#Custom title iterm
+export PROMPT_COMMAND='echo -ne "\033]0;$PWD\007"'
+
+#Change history search binds
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
@@ -26,9 +30,6 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
-#Set prompt format
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$(vcprompt)$ "
-
 #Set colors
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
@@ -37,6 +38,9 @@ export GREP_OPTIONS='--color=auto'
 #Set path
 export PATH="/usr/local/git/bin:/sw/bin/:/usr/local/bin:/usr/local/:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
 export PATH=$PATH:$HOME/Projects/bin #for own binaries
+
+#Set prompt format
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$(vcprompt)$ "
 
 #Set default editor
 export EDITOR=/usr/bin/nano
@@ -52,6 +56,10 @@ alias flushDNS='dscacheutil -flushcache'
 alias openPorts='sudo lsof -i | grep LISTEN'        
 alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
 alias topforever='top -l 9999999 -s 10 -o cpu'
+alias updatebash="curl https://raw.github.com/AlexandruDinache/MacSetup/master/.bash_profile > ~/.bash_profile && reload"
+alias ..="cd ../"
+alias ...="cd ../../"
+alias ....="cd ../../../"
 
 cd() { builtin cd "$@"; ll; }               
 
@@ -68,10 +76,49 @@ ii() {
     echo
 }
 
-function mkcd()
-{
+function mkcd() {
 	mkdir $1 && cd $1
 }
+
+# Generate a ssh key
+function sshKeyGen(){
+echo "Name of the Key: ";
+read name;
+echo "Email associated: ";
+read email;
+`ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa_$name -C "$email"`;
+ssh-add -K ~/.ssh/id_rsa_$name
+pbcopy < ~/.ssh/id_rsa_$name.pub;
+echo "SSH Key copied in your clipboard";
+}
+
+# Generates a random password
+function randpassw() {
+	if [ -z $1 ]; then
+		MAXSIZE=10
+	else
+		MAXSIZE=$1
+	fi
+	array1=( 
+	q w e r t y u i o p a s d f g h j k l z x c v b n m Q W E R T Y U I O P A S D 
+	F G H J K L Z X C V B N M 1 2 3 4 5 6 7 8 9 0 
+	\! \@ \$ \% \^ \& \* \! \@ \$ \% \^ \& \* \@ \$ \% \^ \& \* 
+	) 
+	MODNUM=${#array1[*]} 
+	pwd_len=0 
+	while [ $pwd_len -lt $MAXSIZE ] 
+	do 
+	    index=$(($RANDOM%$MODNUM)) 
+	    echo -n "${array1[$index]}" 
+	    ((pwd_len++)) 
+	done 
+	echo 
+}
+
+#Develop stuff
+alias httpStatus="curl -w %{http_code} -s --output /dev/null $1"
+httpHeaders () { /usr/bin/curl -I -L $@ ; }
+httpDebug () { /usr/bin/curl $@ -o /dev/null -w "dns: %{time_namelookup} connect: %{time_connect} pretransfer: %{time_pretransfer} starttransfer: %{time_starttransfer} total: %{time_total}\n" ; }
 
 fortune | cowsay -f tux
 
