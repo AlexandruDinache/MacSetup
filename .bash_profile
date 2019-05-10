@@ -1,4 +1,5 @@
-shopt -s histappend #append history
+shopt -s histappend
+complete -cf sudo
 
 #Custom title iterm
 export PROMPT_COMMAND='echo -ne "\033]0;$PWD\007"'
@@ -51,12 +52,14 @@ alias ls='ls -GFh'
 alias ~="cd ~"                              
 alias c='clear'                             
 alias o='open -a Finder ./'                 
-alias myip='curl ifconfig.co'               
+alias myip='curl ifconfig.co'
+alias localip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
 alias flushDNS='dscacheutil -flushcache'            
 alias openPorts='sudo lsof -i | grep LISTEN'        
 alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
 alias topforever='top -l 9999999 -s 10 -o cpu'
 alias updatebash="curl https://raw.githubusercontent.com/AlexandruDinache/MacSetup/master/.bash_profile > ~/.bash_profile && source ~/.bash_profile"
+alias vremea="curl -s 'http://rss.accuweather.com/rss/liveweather_rss.asp?metric=1&locCode=EUR|RO|RO010|BUCURESTI' | sed -n '/Currently:/ s/.*: \(.*\): \([0-9]*\)\([CF]\).*/\2°\3, \1/p'"
 alias ..="cd ../"
 alias ...="cd ../../"
 alias ....="cd ../../../"
