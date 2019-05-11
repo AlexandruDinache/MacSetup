@@ -4,15 +4,16 @@ xcode-select --install
 #Install brew The osx package manager
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew update
+brew install bash #latest version of bash
+
+curl https://raw.githubusercontent.com/AlexandruDinache/MacSetup/master/.bash_profile > ~/.bash_profile && source ~/.bash_profile
 
 brew cask install iterm2 #better than terminal
 brew cask install google-chrome
-brew cask install firefox
 brew cask install insomnia #REST client for API projects
 brew cask install spectacle #Move and resize windows with ease using keyboard shortcuts
 brew cask install alfred #better search than spotli
 brew cask install visual-studio-code
-brew cask install lulu #firewall
 brew cask install wireshark #view network packets
 brew cask install teamviewer 
 brew cask install coconutbattery #more info about battery health
@@ -37,7 +38,6 @@ brew install youtube-dl #download youtube video
 brew install httrack #download entire html site
 brew install pyenv #multiple python versions
 brew install vitorgalvao/tiny-scripts/cask-repair #only to update brew casks
-brew install bash #latest version of bash
 brew install fortune #random quotations
 brew install cowsay #ASCII pictures
 brew install git
@@ -48,17 +48,22 @@ brew install mitmproxy #intercept, alter HTTP request
 
 #Install node version manager
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+nvm install stable
+npm install -g lite-server eslint #HTTP server with live reload
 
 #Install visual studio code extensions
 curl -O https://raw.githubusercontent.com/AlexandruDinache/MacSetup/master/vs-extensions.txt
 while read line; do code --install-extension "$line"; done < vs-extensions.txt
 rm vs-extensions.txt
 
-mkdir ~/Projects
-mkdir ~/Projects/dev
+mkdir ~/Projects           #Projects folder
+mkdir ~/Projects/dev       #Development folder
+mkdir ~/Projects/resources #Where i keep untoched themes or snippets
 
 #Don't commit to github everything && GitConfig
-cd ~/Projects/dev
+cd ~/Projects/
 curl -O https://raw.githubusercontent.com/AlexandruDinache/MacSetup/master/.gitignore
 curl -O https://raw.githubusercontent.com/AlexandruDinache/MacSetup/master/.gitconfig
 cd ~
+
+brew cask install lulu #firewall
