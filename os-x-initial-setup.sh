@@ -6,6 +6,8 @@ xcode-select --install
 brew update
 brew install bash #latest version of bash
 brew install vcprompt #Show git branch on shell prompts
+brew install fortune #random quotations
+brew install cowsay #ASCII pictures
 
 #download bash profile
 curl https://raw.githubusercontent.com/AlexandruDinache/MacSetup/master/.bash_profile > ~/.bash_profile && source ~/.bash_profile
@@ -39,9 +41,6 @@ brew cask install cheatsheet #cmd keypress show all shortcuts
 brew install youtube-dl #download youtube video
 brew install httrack #download entire html site
 brew install pyenv #multiple python versions
-brew install vitorgalvao/tiny-scripts/cask-repair #only to update brew casks
-brew install fortune #random quotations
-brew install cowsay #ASCII pictures
 brew install git
 brew install wget
 brew install tldr #smaller man pages
