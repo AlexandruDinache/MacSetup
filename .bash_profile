@@ -1,9 +1,6 @@
 shopt -s histappend
 complete -cf sudo
 
-#Custom title iterm
-export PROMPT_COMMAND='echo -ne "\033]0;$PWD\007"'
-
 #Change history search binds
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
@@ -68,7 +65,6 @@ ii() {
     echo -e "\n${RED}Machine stats :$NC " ; uptime
     echo -e "\n${RED}Current network location :$NC " ; scselect
     echo -e "\n${RED}Public facing IP Address :$NC " ;myip
-    #echo -e "\n${RED}DNS Configuration:$NC " ; scutil --dns
     echo
 }
 
@@ -161,6 +157,3 @@ httpDebug () { /usr/bin/curl $@ -o /dev/null -w "dns: %{time_namelookup} connect
 
 fortune | cowsay -f tux
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
