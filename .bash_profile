@@ -58,7 +58,7 @@ alias ....="cd ../../../"
 alias htdocs="cd /Applications/MAMP/htdocs"
 alias sslfolder="cd /Applications/MAMP/Library/OpenSSL/certs/"
 alias logfolder="cd /Applications/MAMP/logs"
-alias devfolder="cd /Users/alex/Projects/dev
+alias devfolder="cd /Users/alex/Projects/dev"
 
 cd() { builtin cd "$@"; ll; }               
 
