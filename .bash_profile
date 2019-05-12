@@ -54,6 +54,12 @@ alias ..="cd ../"
 alias ...="cd ../../"
 alias ....="cd ../../../"
 
+#MAMP
+alias htdocs="cd /Applications/MAMP/htdocs"
+alias sslfolder="cd /Applications/MAMP/Library/OpenSSL/certs/"
+alias logfolder="cd /Applications/MAMP/logs"
+alias devfolder="cd /Users/alex/Projects/dev
+
 cd() { builtin cd "$@"; ll; }               
 
 #Functions
@@ -157,3 +163,6 @@ httpDebug () { /usr/bin/curl $@ -o /dev/null -w "dns: %{time_namelookup} connect
 
 fortune | cowsay -f tux
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
