@@ -14,3 +14,7 @@ PKief.material-icon-theme
 SmukkeKim.theme-setimonokai
 wix.vscode-import-cost
 WallabyJs.quokka-vscode
+felixfbecker.php-intellisense
+ikappas.composer
+ms-python.python
+
