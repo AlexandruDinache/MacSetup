@@ -49,6 +49,8 @@ brew install tldr #smaller man pages
 brew install mitmproxy #intercept, alter HTTP request
 brew install speedtest-cli
 brew install nikto
+sudo chown -R $(whoami) /usr/local/share/man/man8
+brew install binwalk
 
 #Install node version manager
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
