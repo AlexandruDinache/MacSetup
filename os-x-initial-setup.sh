@@ -38,6 +38,7 @@ brew cask install nextcloud
 brew cask install bitbar #scripts in macos menu bar
 brew cask install cheatsheet #cmd keypress show all shortcuts
 brew cask install gimp
+brew cask install tor-browser
 
 brew install youtube-dl #download youtube video
 brew install httrack #download entire html site
@@ -46,6 +47,8 @@ brew install git
 brew install wget
 brew install tldr #smaller man pages
 brew install mitmproxy #intercept, alter HTTP request
+brew install speedtest-cli
+brew install nikto
 
 #Install node version manager
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
