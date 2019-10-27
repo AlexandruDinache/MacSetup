@@ -73,3 +73,6 @@ curl -O https://raw.githubusercontent.com/AlexandruDinache/MacSetup/master/.gitc
 cd ~
 
 brew cask install lulu #firewall
+
+brew cask install sublime-text
+defaults write com.apple.LaunchServices/com.apple.launchservices.secure LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'
